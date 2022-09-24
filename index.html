@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Micro Interaction Reviews</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <section class="block reviews">
+        <div class="wrapper">
+            <div class="row">
+                <div class="col">
+                    <div class="main-carousel">
+                        <div class="carousel-cell">
+                            <div class="item"></div>
+                        </div>
+                        <div class="carousel-cell">
+                            <div class="item"></div>
+                        </div>
+                        <div class="carousel-cell">
+                            <div class="item"></div>
+                        </div>
+                        <div class="carousel-cell">
+                            <div class="item"></div>
+                        </div>
+                        <div class="carousel-cell">
+                            <div class="item"></div>
+                        </div>
+                        <div class="carousel-cell">
+                            <div class="item"></div>
+                        </div>
+                        <div class="carousel-cell">
+                            <div class="item"></div>
+                        </div>
+                        <div class="carousel-cell">
+                            <div class="item"></div>
+                        </div>
+                        <div class="carousel-cell">
+                            <div class="item"></div>
+                        </div>
+                        <div class="carousel-cell">
+                            <div class="item"></div>
+                        </div>
+                        <div class="carousel-cell">
+                            <div class="item"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <h1>reviews</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+    <script>
+        window.addEventListener("load", function () {
+            var block = document.querySelector('.block.reviews');
+
+            if (block) {
+                var elem = document.querySelector('.main-carousel');
+                var slides = elem.querySelectorAll('.carousel-cell');
+
+                var flkty = new Flickity( elem, {
+                    // options
+                    cellAlign: 'right',
+                    wrapAround: true,
+                    prevNextButtons: true,
+                    pageDots: false,
+                    adaptiveHeight: true,
+                    contain: true
+                });
+
+
+
+                var flickity_button = document.querySelector('button.previous');
+                // add height to the active carousel
+                // console.log('flickity_button');
+                flickity_button.addEventListener("click", function() {
+                    // console.log(flickity_button);
+                    // console.log('0');
+                    slides.forEach((slide) => {
+                        // console.log('1');
+                        slide.classList.remove('expanded')
+                        if (slide.classList.contains('is-selected')) {
+                            // console.log('2');
+                            // add height
+                            slide.sty.add('expanded')
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

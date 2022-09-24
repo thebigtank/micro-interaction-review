@@ -1,0 +1,38 @@
+.block.reviews {
+    padding: 100px 0;
+    .wrapper {
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+
+    .col {
+
+    }
+
+    .main-carousel {
+        .carousel-cell {
+            width: 140px;
+            height: 180px;
+            background-color: #000;
+            margin-left: 20px;
+            &.is-selected {
+                background-color: green;
+            }
+        }
+    }
+}
+
+.flickity-viewport {
+  transition: height 0.2s;
+}
+
+
+.expanded {
+    height: 280px !important;
+}
